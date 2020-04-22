@@ -12,9 +12,9 @@
 (function(window, undefined) {
     var dependencies = [
         {
-            src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+            src: './instalink/vendor/jquery.min.js',
             test: function () {
-                return !!window.jQuery && compareVersions(window.jQuery.fn.jquery, '1.7.0') === 1;
+                return !!window.jQuery && compareVersions(window.jQuery.fn.jquery, '1.12.4') === 0;
             }
         }
     ];
@@ -1475,7 +1475,7 @@
      * @returns {jQuery.Deferred}
      */
     InstaLinkClient.prototype.getRecentUserMedia = function(id, hashfilter, count) {
-        var
+        let
             /**
              * Promise to be resolved when all the data will be loaded
              * @type {jQuery.Deferred}
@@ -1488,6 +1488,8 @@
             self = this;
     
         count = !!count ? window.parseInt(count, 10) : 33;
+
+        def = jQuery.Deferred(); 
     
         if (this._isSandbox) {
             id = 'self';
@@ -1520,7 +1522,7 @@
             def.reject(data);
         });
     
-        return def;
+        return def.promise();
     };
     
     /**
@@ -2396,8 +2398,8 @@
                 postHeight: self._grid ? self._grid.cellHeight + "px" : "initial",
                 postImgWidth: self._grid ? imgSize + "px" : "initial",
                 postImgHeight: self._grid ? imgSize + "px" : "initial",
-                postImgMTop: self._grid ? window.parseInt(-imgSize / 2, 10) + "px" : 0,
-                postImgMLeft: self._grid ? window.parseInt(-imgSize / 2, 10) + "px" : 0
+                postImgMTop: self._grid ? window.parseInt(imgSize / 20, 10) + "px" : 0 ,
+                postImgMLeft: self._grid ? window.parseInt(imgSize / 20, 10) + "px" : 0
             })
         );
     };

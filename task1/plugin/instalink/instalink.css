@@ -303,7 +303,7 @@ a.instalink-header:hover {
   opacity: 1;
 }
 .instalink-scrollbar-slider {
-  width: 2px;
+  width: 5px;
   border-radius: 10px;
   background: #858585;
   -webkit-transform-origin: 50% 0;
@@ -393,11 +393,11 @@ a.instalink-header:hover {
   background: #f8f8f8;
 }
 .instalink-user .instalink-feed-wrapper {
-  top: 86px;
+  top: 121px;
 }
-.instalink-tag .instalink-feed-wrapper {
+/* .instalink-tag .instalink-feed-wrapper {
   top: 35px;
-}
+} */
 .instalink-hide-heading .instalink-feed-wrapper {
   top: 0;
 }
@@ -493,7 +493,7 @@ a.instalink-header:hover {
           transform: translateX(-50%) translateZ(0);
 }
 .instalink-feed-post-square.instalink-feed-post img {
-  width: 120% !important;
+  width: 100% !important;
   height: 100% !important;
 }
 .instalink-feed-post:hover span img {
