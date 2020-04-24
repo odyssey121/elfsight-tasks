@@ -3,7 +3,8 @@ const domain = 'https://jsonplaceholder.typicode.com';
 let headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Origin': window.location.origin
+    'Origin': window.location.origin,
+    "Access-Control-Allow-Origin":"*"
 }
 
 
